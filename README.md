@@ -1,4 +1,4 @@
-# Server Setup Guide
+# Server Setup Example
 
 Below are the basic steps needed to setup the server.
 
@@ -14,7 +14,7 @@ Below are the basic steps needed to setup the server.
   ```
   sudo ufw enable
   ```
-- Allow traffic from port 80 (normal, unencrypted web traffic), port 443 (TLS/SSL encrypted traffic) and port 22 (default port for SSH).
+- Allow connections for port 80 (normal, unencrypted web traffic), port 443 (TLS/SSL encrypted traffic) and port 22 (default port for SSH).
   ```
   sudo ufw allow 'Nginx Full'
   ```
@@ -27,7 +27,7 @@ Below are the basic steps needed to setup the server.
   sudo ufw status
   ```
 
-  The output is as below
+  The output is should looking like below
 
   ```
   Status: active
@@ -45,15 +45,23 @@ Below are the basic steps needed to setup the server.
   sudo systemctl status nginx
   ```
   You should see something like this:
-  ```text
+  ```
   ...
   Active: active (running) since Fri 2022-10-01 18:08:29 UTC; 2 days ago
   ...
   ```
 - If it is already running, go to browser and enter the server's public IP address into the browser's address bar. You should see the default Nginx landing page.
+
   ```
   http://<your-server-public-ip>
   ```
+
+  Run the command below to get your server's public IP:
+
+  ```
+  curl -4 icanhazip.com
+  ```
+
 - Next, create a new document root directory
   ```
   sudo mkdir -p /var/www/<your-domain-name>
@@ -139,63 +147,3 @@ Below are the basic steps needed to setup the server.
   ```
 
 - To test the results, go to browser and point to your server's public IP address. You should see the content that you have created.
-
-## Managing Web Server Process
-
-Below are the commands that we will usually use to manage our web server:
-
-1. To stop the web server
-
-   Nginx:
-
-   ```
-   sudo systemctl stop nginx
-   ```
-
-   Apache:
-
-   ```
-   sudo systemctl stop apache2
-   ```
-
-2. To start the web server when it is stopped
-
-   Nginx:
-
-   ```
-   sudo systemctl start nginx
-   ```
-
-   Apache:
-
-   ```
-   sudo systemctl start apache2
-   ```
-
-3. To stop and then start the service again
-
-   Nginx:
-
-   ```
-   sudo systemctl restart nginx
-   ```
-
-   Apache:
-
-   ```
-   sudo systemctl restart apache2
-   ```
-
-4. To re-enable the service to start up at boot
-
-   Nginx:
-
-   ```
-   sudo systemctl enable nginx
-   ```
-
-   Apache:
-
-   ```
-   sudo systemctl enable apache2
-   ```
