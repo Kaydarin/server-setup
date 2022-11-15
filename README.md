@@ -41,7 +41,7 @@ ssh -i key.pem ubuntu@123.12.12.12
 
   The output is should looking like below
 
-  ![alt text](img/ufw_status.png)
+  ![]() <img src="img/ufw_status.png"  width="300">
 
 - Check whether the web server is already running or not.
 
@@ -50,7 +50,8 @@ ssh -i key.pem ubuntu@123.12.12.12
   ```
 
   You should see something like this:
-  ![alt text](img/nginx_status.png)
+
+  ![]() <img src="img/nginx_status.png"  width="500">
 
 - If it is already running, go to browser and enter the server's public IP address into the browser's address bar. You should see the default Nginx landing page.
 
