@@ -2,6 +2,18 @@
 
 Below are the basic steps needed to setup the server.
 
+To access the server remotely using SSH via terminal or Command Prompt, run the command below:
+
+```
+ssh -i <your-server-key-file> <your-server-user>@<your-server-public-ip>
+```
+
+Example:
+
+```
+ssh -i key.pem ubuntu@123.12.12.12
+```
+
 ## Web Server Installation
 
 ### 1. Nginx
@@ -29,27 +41,17 @@ Below are the basic steps needed to setup the server.
 
   The output is should looking like below
 
-  ```
-  Status: active
-
-  To                         Action      From
-  --                         ------      ----
-  OpenSSH                    ALLOW       Anywhere
-  Nginx Full                 ALLOW       Anywhere
-  OpenSSH (v6)               ALLOW       Anywhere (v6)
-  Nginx Full (v6)            ALLOW       Anywhere (v6)
-  ```
+  ![alt text](img/ufw_status.png)
 
 - Check whether the web server is already running or not.
+
   ```
   sudo systemctl status nginx
   ```
+
   You should see something like this:
-  ```
-  ...
-  Active: active (running) since Fri 2022-10-01 18:08:29 UTC; 2 days ago
-  ...
-  ```
+  ![alt text](img/nginx_status.png)
+
 - If it is already running, go to browser and enter the server's public IP address into the browser's address bar. You should see the default Nginx landing page.
 
   ```
