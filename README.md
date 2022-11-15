@@ -64,20 +64,20 @@ Below are the basic steps needed to setup the server.
 
 - Next, create a new document root directory
   ```
-  sudo mkdir -p /var/www/<your-domain-name>
+  sudo mkdir -p /var/www/<your-domain-or-project-name>
   ```
 - Assign ownership to the created directory
   ```
-  sudo chown -R $USER:$USER /var/www/<your-domain-name>
+  sudo chown -R $USER:$USER /var/www/<your-domain-or-project-name>
   ```
 - Grant permission to access the directory
   ```
-  sudo chmod -R 755 /var/www/<your-domain-name>
+  sudo chmod -R 755 /var/www/<your-domain-or-project-name>
   ```
 - Create a sample html page for the site
 
   ```
-  sudo nano /var/www/<your-domain-name>/index.html
+  sudo nano /var/www/<your-domain-or-project-name>/index.html
   ```
 
 - Copy and paste the code below into index.html file
@@ -96,7 +96,7 @@ Below are the basic steps needed to setup the server.
 - Save and close the file by pressing `Ctrl+X`
 - Create a server block or virtual host file to serve the content
   ```
-  sudo nano /etc/nginx/sites-available/<your-domain-name>
+  sudo nano /etc/nginx/sites-available/<your-domain-or-project-name>
   ```
 - Paste the code below and press `Ctrl+X` to save the file
 
@@ -105,7 +105,7 @@ Below are the basic steps needed to setup the server.
       listen 80;
       listen [::]:80;
 
-      root /var/www/<your-domain-name>;
+      root /var/www/<your-domain-or-project-name>;
       index index.html index.htm index.nginx-debian.html;
 
       server_name <your-domain-name> www.<your-domain-name>;
@@ -119,7 +119,7 @@ Below are the basic steps needed to setup the server.
 - Enable the server block and restart Nginx
 
   ```
-  sudo ln -s /etc/nginx/sites-available/<your-domain-name> /etc/nginx/sites-enabled/
+  sudo ln -s /etc/nginx/sites-available/<your-domain-or-project-name> /etc/nginx/sites-enabled/
   ```
 
   ```
