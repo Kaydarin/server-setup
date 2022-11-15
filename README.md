@@ -85,12 +85,12 @@ Below are the basic steps needed to setup the server.
   </html>
   ```
 
-- Save and close the file by pressing Ctrl+X
+- Save and close the file by pressing `Ctrl+X`
 - Create a server block or virtual host file to serve the content
   ```
   sudo nano /etc/nginx/sites-available/<your-domain-name>
   ```
-- Paste the code below and press Ctrl+X to save the file
+- Paste the code below and press `Ctrl+X` to save the file
 
   ```
   server {
@@ -118,13 +118,13 @@ Below are the basic steps needed to setup the server.
    sudo systemctl restart nginx
   ```
 
-- Enable _server_names_hash_bucket_size_ in nginx.conf file to avoid possible hash bucket memory problem
+- Enable `server_names_hash_bucket_size` in nginx.conf file to avoid possible hash bucket memory problem
 
   ```
   sudo nano /etc/nginx/nginx.conf
   ```
 
-  Find the _server_names_hash_bucket_size_ directive and remove the '#' symbol to uncomment the line. Save and close the file by pressing Ctrl+X
+  Find the `server_names_hash_bucket_size` directive and remove the '#' symbol to uncomment the line. Save and close the file by pressing `Ctrl+X`
 
 - Run the command below to make sure there are no syntax errors in any of the Nginx files
 
