@@ -45,9 +45,9 @@ Below are the basic steps needed to setup the server.
   sudo systemctl status nginx
   ```
   You should see something like this:
-  ```
+  ```text
   ...
-  Active: active (running) since Fri 2022-03-01 16:08:19 UTC; 3 days ago
+  Active: active (running) since Fri 2022-10-01 18:08:29 UTC; 2 days ago
   ...
   ```
 - If it is already running, go to browser and enter the server's public IP address into the browser's address bar. You should see the default Nginx landing page.
@@ -115,7 +115,7 @@ Below are the basic steps needed to setup the server.
   ```
 
   ```
-   sudo systemctl restart nginx
+  sudo systemctl restart nginx
   ```
 
 - Enable `server_names_hash_bucket_size` in nginx.conf file to avoid possible hash bucket memory problem
